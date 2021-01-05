@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝图片预览</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .clearfix::after {
+            display: block;
+            clear: both;
+            content:'';
+        }
+        #pic {
+            width: 400px;
+            height: 400px;
+        }
+
+        ul li {
+            list-style: none;
+            float: left;
+            margin-top: 10px;
+            margin-right: 40px;
+           
+
+        }
+        ul li img {
+            width: 45px;
+            height: 40px;
+            border: 2px solid white;
+        }
+        .active {
+            border: 2px solid black;
+        }
+    </style>
+    <script>
+        window.onload = function (){
+            //1.封装ocument.getElementById()
+            function $(id){
+                return document.getElementById(id);
+            }
+            //2.获取img
+            var smallImgs = document.getElementsByClassName('smallImg')
+            console.log(smallImgs)
+
+            //3.遍历每个img并在每个img处理
+            for(var i = 0; i < smallImgs.length; i++){
+                //4.鼠标经过的时候            
+                smallImgs[i].onmouseover = function (){
+                    this.setAttribute('class','active');
+                    var image = this.getAttribute('src')
+                    $('pic').setAttribute('src',image)
+
+                }
+                //5.鼠标移出的时候
+                smallImgs[i].onmouseout = function (){
+                    this.setAttribute('class','')
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+        <div id="box">
+            <img src="img/1.jpg" alt="" id="pic">
+            <ul class="small clearfix">
+                <li><img src="img/1.jpg" alt="" id="first" class="smallImg"></li>
+                <li><img src="img/2.jpg" alt="" id="second" class="smallImg"></li>
+                <li><img src="img/3.jpg" alt="" id="third" class="smallImg"></li>
+                <li><img src="img/4.jpg" alt="" id="forth" class="smallImg"></li>
+            </ul>
+        </div>
+</body>
+</html>

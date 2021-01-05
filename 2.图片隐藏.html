@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.图片隐藏显示</title>
+    <style>
+        #pic {
+            width: 400px;
+        }
+    </style>
+    <script>
+        window.onload = function (){
+
+            //1.封装document.getElementById()
+            function $(id){
+                return document.getElementById(id);
+            }
+
+            //2.添加点击事件
+
+            $('hidden').onclick = function (){
+
+                if($('hidden').innerHTML === '隐藏'){                   
+                    $('pic').style.display = 'none';
+                    $('hidden').innerHTML = '显示';
+             
+                }else{
+                    $('pic').style.display = 'block';
+                    $('hidden').innerHTML = '隐藏';
+
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button id="hidden">隐藏</button>
+    </div>  
+    <img src="img/1.jpg" alt="" id="pic">
+</body>
+</html>
