@@ -1,0 +1,85 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>音乐盒选择</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            #box {
+                width: 500px;
+                margin: 0 auto;
+                border: 1px solid black;
+                padding: 20px;
+            }
+            #box p {
+                padding: 5px 0;
+            }
+            .nav {
+                font-size: 20px;
+                border-bottom: 2px solid gray;
+            }
+            .last {
+                border-bottom: 2px solid gray;
+            }
+            .btn {
+                margin-top: 10px;
+                text-align: center;
+            }
+        </style>
+        <script>
+            window.onload = function(){
+
+                function $(id){
+                    return document.getElementById(id);
+                }
+
+                var inps = document.getElementsByTagName('input');
+                
+                //全选
+                $('select').onclick = function(){
+                    for(var i = 0; i < inps.length; i++){
+                        inps[i].checked = true;
+                    }
+                }
+                //取消全选
+                $('deselect').onclick = function(){
+                    for(var i = 0; i < inps.length; i++){
+                        inps[i].checked = false;
+                    }
+                }
+                //反选
+                $('reversed').onclick = function(){
+                    for(var i = 0; i < inps.length; i++){
+                        if(inps[i].checked == true){
+                            inps[i].checked = false;
+                        }else{
+                            inps[i].checked = true;
+                        }
+                     
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="box">          
+                <p class="nav">网易云音乐</p>
+                <p><input type="checkbox" name="music" value="">雨天</p>
+                <p><input type="checkbox" name="music" value="">雨天</p>
+                <p><input type="checkbox" name="music" value="">雨天</p>
+                <p><input type="checkbox" name="music" value="">雨天</p>
+                <p><input type="checkbox" name="music" value="">雨天</p>
+                <p class="last"><input type="checkbox" name="music" value="">雨天</p>
+                <div class="btn">
+                    <button id="select">全选</button>
+                    <button id="deselect">取消全选</button>
+                    <button id="reversed">反选</button>
+                </div>
+        </div>
+
+    </body>
+    </html>
