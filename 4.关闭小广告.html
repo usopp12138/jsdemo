@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1467618_zhyzgbmvmx.css">
+    <title>关闭小广告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            margin : 20px;
+        }
+        .clearfix::after {
+            display: block;
+            clear: both;
+            content:'';
+        }
+        #left {
+            float: left;
+            border: 1px solid gainsboro;
+            color:cadetblue
+        }
+        #left .iconfont {
+            font-size: 20px;
+            
+        }
+        #right {
+           
+            float: left;
+            padding: 5px;
+            border: 1px solid gainsboro;
+        }
+        #right .red {
+            text-align: center;
+            color:cadetblue;
+        }
+        .icon {
+            font-size: 0;
+        }
+        .icon img{
+            
+            width: 100px;
+            height: 100px;
+        }
+        
+    </style>
+    <script>
+        window.onload = function (){
+
+            function $(id){
+                return document.getElementById(id)
+            }
+
+            $('left').onclick = function (){
+                $('box').style.display = 'none';
+            }
+
+        }
+    </script>
+</head>
+<body>
+        <div id="box" class="clearfix">
+            <div id="left"><i class="iconfont icon-close"></i></div>
+            <div id="right">
+                <p class="red">去领红包</p>
+                <p class="icon"><img src="img/1.jpg" alt=""></p>
+            </div>
+        </div>
+</body>
+</html>
