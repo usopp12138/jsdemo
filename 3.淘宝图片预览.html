@@ -49,11 +49,10 @@
             //3.遍历每个img并在每个img处理
             for(var i = 0; i < smallImgs.length; i++){
                 //4.鼠标经过的时候            
-                smallImgs[i].onmouseover = function (){
-                    this.setAttribute('class','active');
+                smallImgs[i].onmouseover = function (){              
+                 this.setAttribute('class','active');
                     var image = this.getAttribute('src')
                     $('pic').setAttribute('src',image)
-
                 }
                 //5.鼠标移出的时候
                 smallImgs[i].onmouseout = function (){
